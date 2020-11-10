@@ -3,19 +3,22 @@ import { Text, View, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { Fontisto } from "@expo/vector-icons";
 
 export default () => {
   return (
     <View style={styles.container}>
       <View style={styles.box}>
-        <FontAwesome5 name="filter" size={24} color="black" />
         <Text></Text>
+
         <View style={styles.search}>
           <Text>Search</Text>
+          <Ionicons name="ios-search" size={20} color="black" />
         </View>
-        <Ionicons name="ios-search" size={24} color="black" />
+        <FontAwesome5 name="filter" size={21} color="black" />
       </View>
       <Text style={styles.title}>Clothing For All</Text>
+      <View style={styles.box2}></View>
     </View>
   );
 };
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   box: {
-    height: "30%",
+    height: "10%",
     width: "100%",
     padding: 20,
     margin: 0,
@@ -44,7 +47,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#CBCBCB",
     height: 25,
     width: 150,
-    marginRight: 10,
-    marginLeft: 100,
+    marginRight: 20,
+    marginLeft: 75,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 4,
+  },
+  box2: {
+    height: 75,
+    width: "100%",
+    backgroundColor: "#9080F9",
+    marginTop: 510,
   },
 });
