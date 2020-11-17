@@ -1,9 +1,10 @@
 import React, { cloneElement } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image, FlatList } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
+import { SimpleLineIcons } from "@expo/vector-icons";
 
 export default () => {
   return (
@@ -16,8 +17,18 @@ export default () => {
           <Ionicons name="ios-search" size={20} color="black" />
         </View>
         <FontAwesome5 name="filter" size={21} color="black" />
+        <SimpleLineIcons name="menu" size={22} color="black" />
       </View>
+      <FlatList>Dat</FlatList>
       <Text style={styles.title}>Clothing For All</Text>
+      <Image
+        source={require("../../assets/whiteplaintshirt.jpg")}
+        style={{ width: 100, height: 100 }}
+      />
+      <Image
+        source={require("../../assets/blacktshirt.jpg")}
+        style={{ width: 100, height: 100 }}
+      />
       <View style={styles.box2}></View>
     </View>
   );
@@ -41,7 +52,6 @@ const styles = StyleSheet.create({
     padding: 20,
     margin: 0,
     backgroundColor: "#9080F9",
-    flexDirection: "row",
   },
   search: {
     backgroundColor: "#CBCBCB",
