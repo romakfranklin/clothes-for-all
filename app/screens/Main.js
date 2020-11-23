@@ -6,6 +6,8 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
+import Card from "../components/Card";
+
 export default () => {
   return (
     <View style={styles.container}>
@@ -20,14 +22,19 @@ export default () => {
         <SimpleLineIcons name="menu" size={22} color="black" />
       </View>
       <FlatList>Dat</FlatList>
-      <Text style={styles.title}>Clothing For All</Text>
-      <Image
-        source={require("../../assets/whiteplaintshirt.jpg")}
-        style={{ width: 100, height: 100 }}
+      <Text style={styles.title}>Clothing-For-All</Text>
+
+      <Card
+        name="Black T-shirt"
+        image={require("../../assets/blacktshirt.jpg")}
       />
-      <Image
-        source={require("../../assets/blacktshirt.jpg")}
-        style={{ width: 100, height: 100 }}
+      <Card
+        name="White T-shirt"
+        image={require("../../assets/whiteplaintshirt.jpg")}
+      />
+      <Card
+        name="Black T-shirt"
+        image={require("../../assets/blacktshirt.jpg")}
       />
       <View style={styles.box2}></View>
     </View>
@@ -42,16 +49,21 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 30,
     padding: 0,
     textAlign: "center",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignContent: "flex-start",
   },
   box: {
-    height: "10%",
+    height: 60,
     width: "100%",
     padding: 20,
     margin: 0,
     backgroundColor: "#9080F9",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   search: {
     backgroundColor: "#CBCBCB",
@@ -65,9 +77,17 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   box2: {
-    height: 75,
+    height: 100,
     width: "100%",
     backgroundColor: "#9080F9",
     marginTop: 510,
+  },
+  text2: {
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+  text3: {
+    fontWeight: "bold",
+    fontSize: 18,
   },
 });
