@@ -1,5 +1,13 @@
 import React, { cloneElement } from "react";
-import { Text, View, StyleSheet, Image, FlatList } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  FlatList,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -11,32 +19,36 @@ import Card from "../components/Card";
 export default () => {
   return (
     <View style={styles.container}>
-      <View style={styles.box}>
-        <Text></Text>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.box}>
+          <Text></Text>
 
-        <View style={styles.search}>
-          <Text>Search</Text>
-          <Ionicons name="ios-search" size={20} color="black" />
+          <View style={styles.search}>
+            <Text>Search</Text>
+            <Ionicons name="ios-search" size={20} color="black" />
+          </View>
+          <FontAwesome5 name="filter" size={21} color="black" />
+          <SimpleLineIcons name="menu" size={22} color="black" />
         </View>
-        <FontAwesome5 name="filter" size={21} color="black" />
-        <SimpleLineIcons name="menu" size={22} color="black" />
-      </View>
-      <FlatList>Dat</FlatList>
-      <Text style={styles.title}>Clothing-For-All</Text>
+        <FlatList>Dat</FlatList>
+        <Text style={styles.title}>Clothing-For-All</Text>
 
-      <Card
-        name="Black T-shirt"
-        image={require("../../assets/blacktshirt.jpg")}
-      />
-      <Card
-        name="White T-shirt"
-        image={require("../../assets/whiteplaintshirt.jpg")}
-      />
-      <Card
-        name="Black T-shirt"
-        image={require("../../assets/blacktshirt.jpg")}
-      />
-      <View style={styles.box2}></View>
+        <Card
+          name="Black T-shirt"
+          image={require("../../assets/blacktshirt.jpg")}
+        />
+        <Card
+          name="White T-shirt"
+          image={require("../../assets/whiteplaintshirt.jpg")}
+        />
+        <Card
+          name="Black T-shirt"
+          image={require("../../assets/blacktshirt.jpg")}
+        />
+        <View style={styles.box2}>
+          <Ionicons name="ios-settings" size={30} color="black" />
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -77,10 +89,12 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   box2: {
-    height: 100,
+    height: 50,
     width: "100%",
     backgroundColor: "#9080F9",
-    marginTop: 510,
+    marginTop: 5,
+    flexDirection: "row-reverse",
+    alignItems: "center",
   },
   text2: {
     fontWeight: "bold",
